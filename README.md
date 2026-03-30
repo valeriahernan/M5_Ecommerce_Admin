@@ -17,8 +17,6 @@ Permite gestionar productos y categorías mediante formularios web y conexión a
 ---
 
 ## 🔹 Estructura del proyecto
-## 🔹 Estructura del proyecto
-
 
 M5_Ecommerce_Admin/
 │
