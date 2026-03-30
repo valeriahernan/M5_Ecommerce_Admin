@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name>M5_Ecommerce_Admin</display-name>
+
+    <!-- 🔹 Página de inicio -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- 🔹 Filtro de encoding (UTF-8) -->
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ignore</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- ===================== -->
+    <!-- PRODUCTOS -->
+    <!-- ===================== -->
+
+    <!-- Listar -->
+    <servlet>
+        <servlet-name>ProductoListServlet</servlet-name>
+        <servlet-class>com.ecommerce.servlets.ProductoListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductoListServlet</servlet-name>
+        <url-pattern>/admin/producto</url-pattern>
+    </servlet-mapping>
+
+    <!-- Crear -->
+    <servlet>
+        <servlet-name>ProductoCrearServlet</servlet-name>
+        <servlet-class>com.ecommerce.servlets.ProductoCrearServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductoCrearServlet</servlet-name>
+        <url-pattern>/admin/producto/new</url-pattern>
+    </servlet-mapping>
+
+    <!-- Editar -->
+    <servlet>
+        <servlet-name>ProductoEditarServlet</servlet-name>
+        <servlet-class>com.ecommerce.servlets.ProductoEditarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductoEditarServlet</servlet-name>
+        <url-pattern>/admin/producto/edit</url-pattern>
+    </servlet-mapping>
+
+    <!-- Eliminar -->
+    <servlet>
+        <servlet-name>ProductoEliminarServlet</servlet-name>
+        <servlet-class>com.ecommerce.servlets.ProductoEliminarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductoEliminarServlet</servlet-name>
+        <url-pattern>/admin/producto/delete</url-pattern>
+    </servlet-mapping>
+
+    <!-- ===================== -->
+    <!-- CATEGORÍAS (⚠ TE FALTABAN) -->
+    <!-- ===================== -->
+
+    <!-- Listar categorías -->
+    <servlet>
+        <servlet-name>CategoriaListServlet</servlet-name>
+        <servlet-class>com.ecommerce.servlets.CategoriaListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoriaListServlet</servlet-name>
+        <url-pattern>/admin/categoria</url-pattern>
+    </servlet-mapping>
+
+    <!-- Crear categoría -->
+    <servlet>
+        <servlet-name>CategoriaCrearServlet</servlet-name>
+        <servlet-class>com.ecommerce.servlets.CategoriaCrearServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoriaCrearServlet</servlet-name>
+        <url-pattern>/admin/categoria/new</url-pattern>
+    </servlet-mapping>
+
+    <!-- Eliminar categoría -->
+    <servlet>
+        <servlet-name>CategoriaEliminarServlet</servlet-name>
+        <servlet-class>com.ecommerce.servlets.CategoriaEliminarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoriaEliminarServlet</servlet-name>
+        <url-pattern>/admin/categoria/delete</url-pattern>
+    </servlet-mapping>
+
+</web-app>
